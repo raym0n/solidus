@@ -16,6 +16,13 @@
     comparisons. A comparison will fail if the two objects do not use the same
     currency. [#1682](https://github.com/solidusio/solidus/pull/1682)
 
+*   The "Stores" section of Settings in the admin now supports creating and
+    editing multiple stores.
+
+*   Deprecations
+
+    * `cache_key_for_taxons` helper has been deprecated in favour of `cache [I18n.locale, @taxons]`
+
 ## Solidus 2.1.0 (unreleased)
 
 *   The OrderUpdater (as used by `order.update!`) now fully updates taxes.
@@ -516,6 +523,9 @@
     the exception (an incomplete package would be returned). Now the coordinator
     checks that the package is complete and raises `InsufficientStock` if it is
     incomplete for any reason.
+
+*   Removed `Spree::Zone.global` [#627](https://github.com/solidusio/solidus/pull/627)
+    Use the "GlobalZone" factory instead: `FactoryGirl.create(:global_zone)`
 
 ## Solidus 1.1.0 (2015-11-25)
 
